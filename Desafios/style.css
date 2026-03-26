@@ -1,0 +1,15 @@
+:root {
+    --bg-fundo-site: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins',sans-serif;
+    background: var(--bg-fundo-site);
+    --bg-vidro: rgba(255, 255, 255, 0.1);
+    --borda-vidro: rgba(255, 255, 255, 0.2);
+    --blur: blur(15px);
+    --accent-color: #667eea;
+    --secondary-color: #764ba2;
+    --text-color: #ffffff;
+}

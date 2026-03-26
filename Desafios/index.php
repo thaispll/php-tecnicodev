@@ -71,6 +71,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calc-card">
@@ -90,6 +91,37 @@
         <?php if ($resultado_f !== ""): ?>
             <div class="resultado">Resultado: <?php echo $resultado_f; ?></div>             
         <?php endif; ?>
+    </div>
+    <div class="historico-container">
+        <h3>últimos 5 cálculos efetuados</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>N1</th>
+                    <th>Operação</th>
+                    <th>N2</th>
+                    <th>Resultado</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (count($historico) >0): ?>
+                    <?php foreach($historico as $linha): ?>
+                        <tr>
+                            <td><?php echo $linha['num1'];?> </td>
+                            <td><?php echo $linha['operacao'];?> </td>
+                            <td><?php echo $linha['num2'];?> </td>
+                            <td><?php echo $linha['resultado'];?> </td>
+                            <td><?php echo date('d/m/H:i', strtotime($linha['data_calculo']));?> </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5">Nenhum cálculo no histórico.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
