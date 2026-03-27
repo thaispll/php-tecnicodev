@@ -1,11 +1,5 @@
 :root {
     --bg-fundo-site: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-}
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: 'Poppins',sans-serif;
-    background: var(--bg-fundo-site);
     --bg-vidro: rgba(255, 255, 255, 0.1);
     --borda-vidro: rgba(255, 255, 255, 0.2);
     --blur: blur(15px);
@@ -13,3 +7,141 @@ body {
     --secondary-color: #764ba2;
     --text-color: #ffffff;
 }
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins',sans-serif;
+    background: var(--bg-fundo-site);
+    min-height: 100vh;
+
+    background-attachment: fixed; /* fixa a imagem de fundo em relação à viewport(janela do navegador)*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.calc-card {
+    background: var(--bg-vidro);
+    backdrop-filter: var(--blur); /* efeitos visuais */
+    -webkit-backdrop-filter: var(--borda-vidro);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 20px;
+    padding: 40px;
+    width: 380px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    background: var(--bg-fundo-site);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 12px;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: açç 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.4);
+}
+
+select option {
+    background-color: #302b63;
+    color: var(--text-color);
+} 
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color:var(--text-color);
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.resultado {
+    margin-top: 25px;
+    padding: 15px;
+    background: var(--bg-vidro);
+    border-radius: 12px;
+    border: 1px dashed var(--borda-vidro);
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.historico-container {
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    background: var(--bg-vidro);
+    border-bottom: 1px solid var(--borda-vidro);
+    backdrop-filter: var(--blur);
+}
+
+tr:hover td {
+    background:rgba(255, 255, 255, 0.15);
+}
+
+@keyframes fadeIn {
+    form {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
