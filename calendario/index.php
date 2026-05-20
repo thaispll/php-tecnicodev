@@ -25,6 +25,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendário PHP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Calendário: <?php echo date('F Y', $dataAtual); ?></h2>
